@@ -124,5 +124,5 @@ def updateUser() :
 
 ### Service Listener ###
 if __name__ == "__main__":
-    app.run(host="localhost", port=8090, debug=True)
+    app.run(port=8090, debug=True)
 #########################
