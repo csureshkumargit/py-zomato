@@ -1,13 +1,18 @@
-
 from flask import Flask,Response,request
 import pymongo
 import json
 from bson.objectid import ObjectId
+import os
+from dotenv import load_dotenv,find_dotenv
+load_dotenv(find_dotenv())
+
 app = Flask(__name__)
 
 ### Connecting to Mongo DB ###
 try:
-    mongo = pymongo.MongoClient(host="localhost", port=27017)
+    connectionString = os.environ.get('SERVER_MONGO_URL')
+    print(connectionString)
+    mongo = pymongo.MongoClient(connectionString)
     db = mongo.py_Zomato_DB
     mongo.server_info()
     print("Connection Succeeded")
