@@ -11,7 +11,6 @@ app = Flask(__name__)
 ### Connecting to Mongo DB ###
 try:
     connectionString = os.environ.get('SERVER_MONGO_URL')
-    print(connectionString)
     mongo = pymongo.MongoClient(connectionString)
     db = mongo.py_Zomato_DB
     mongo.server_info()
